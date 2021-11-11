@@ -1,7 +1,7 @@
 areal = 0
 ribbon = 0
 
-f = open('input_Day2.txt', 'r')
+f = open('Inputs/input_Day2.txt', 'r')
 fil = f.read()
 f.close()
 
