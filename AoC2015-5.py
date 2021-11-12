@@ -1,11 +1,11 @@
-from re import search
+from re import findall, search
 
-f = open('Inputs/input_Day5.txt', 'r')
+f = open('Inputs/day5.txt', 'r')
 fil = f.read()
 f.close
 
 x = fil.split('\n')
-
+z = fil.split('\n')
 def day5_1():
     toLike = False
     nice = 0
@@ -29,7 +29,10 @@ def day5_1():
             nice+=1
                 
     print(nice)
-#Kunne blitt løst slik: print sum([1 for x in input if len(findall(r'[aeiou]', x)) >= 3 and findall(r'(.)\1', x) and not findall(r'(ab|cd|pq|xy)', x)])
+def day5_1part2():
+    #Bedre løsning etter søk og hjelp
+     print(sum([1 for x in z if len(findall(r'[aeiou]', x)) >= 3 and findall(r'(.)\1', x) and not findall(r'(ab|cd|pq|xy)', x)]))
+     
 def day5_2():
     #Fikk veldig mye hjelp med denne
     print(len([s for s in x if (search(r'(..).*\1', s) and
@@ -39,4 +42,5 @@ def day5_2():
     
 if __name__ == '__main__':
     day5_1()
+    day5_1part2()
     day5_2()
