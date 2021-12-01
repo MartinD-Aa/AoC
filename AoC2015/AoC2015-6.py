@@ -2,7 +2,9 @@ from re import findall
 def day6_1(fil, lights):
     instructions=fil.split('\n')
     on=0
+    i=0
     for line in instructions:
+        i+=1
         words = line.split()
         if (len(words) == 5):
             if(words[1] == 'off'):
@@ -52,6 +54,7 @@ def day6_1(fil, lights):
         else:
             print('Error')
             break
+        print(i)
     for i in range(0,1000):
         for j in range(0,1000):
             if (lights[i][j]==1):
